@@ -1,0 +1,144 @@
+{
+  "modName": "Wayfarer",
+  "displayName": "Wayfarer",
+  "cursorFillMode": "topToBottom",
+  "pages": [
+    {
+      "pageDisplayName": "General",
+      "cursorFillMode": "topToBottom",
+      "content": [
+        { "text": "Wayfarer — Immersive Travel", "type": "header" },
+        {
+          "id": "bEnabled:Master", "text": "Enable Wayfarer",
+          "help": "Master switch. Off = untouched vanilla fast travel.",
+          "type": "toggle", "valueOptions": { "sourceType": "ModSettingBool" }
+        },
+        {
+          "id": "fBaseChance:Encounters", "text": "Encounter Chance",
+          "help": "Chance (0-100) a journey is interrupted by an event.",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "formatString": "{0}%", "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fNightMultiplier:Encounters", "text": "Night Multiplier",
+          "help": "Multiply encounter chance at night (18:00-06:00).",
+          "type": "slider",
+          "valueOptions": { "min": 0.5, "max": 3.0, "step": 0.1, "formatString": "{2}x", "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fHoursPer100k:Journey", "text": "Travel Time",
+          "help": "In-game hours per 100k units of distance.",
+          "type": "slider",
+          "valueOptions": { "min": 0.0, "max": 12.0, "step": 0.5, "formatString": "{1} hr", "sourceType": "ModSettingFloat" }
+        },
+        { "type": "empty" },
+        { "text": "How Often Each Event Fires (relative weights)", "type": "header" },
+        {
+          "id": "fWeightCombat:Encounters", "text": "Combat",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightTraveler:Encounters", "text": "Camps",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightDiscovery:Encounters", "text": "Corpses",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightHazard:Encounters", "text": "Roadblocks",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Combat",
+      "cursorFillMode": "topToBottom",
+      "content": [
+        { "text": "Combat Encounters", "type": "header" },
+        {
+          "id": "iActorCount:Encounters", "text": "Max Enemies",
+          "help": "Upper cap on hostiles per combat encounter.",
+          "type": "slider",
+          "valueOptions": { "min": 1, "max": 12, "step": 1, "sourceType": "ModSettingInt" }
+        },
+        {
+          "id": "fPairChance:Encounters", "text": "Predator Pair Chance",
+          "help": "Chance a lone predator (bear/sabre cat) brings a second.",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 5, "formatString": "{0}%", "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fAvoidBaseChance:Encounters", "text": "Slip-Past Chance",
+          "help": "Base chance (0-100) to avoid combat unseen; Sneak improves it.",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 5, "formatString": "{0}%", "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Wilderness Danger",
+      "cursorFillMode": "topToBottom",
+      "content": [
+        { "text": "Danger When You Leave the Road", "type": "header" },
+        {
+          "id": "fChance:Danger", "text": "Danger Chance",
+          "help": "Chance (0-100) a detour runs you into danger.",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 5, "formatString": "{0}%", "sourceType": "ModSettingFloat" }
+        },
+        { "text": "What the Danger Is (relative weights)", "type": "header" },
+        {
+          "id": "fWeightAnimals:Danger", "text": "Wild Animals",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightMonsters:Danger", "text": "Monsters",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightBandits:Danger", "text": "Bandits",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightRobbers:Danger", "text": "Robbers",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fWeightDragons:Danger", "text": "Dragons",
+          "type": "slider",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Display",
+      "cursorFillMode": "topToBottom",
+      "content": [
+        { "text": "Presentation", "type": "header" },
+        {
+          "id": "bShowOverlay:Display", "text": "Show Travel Overlay",
+          "type": "toggle", "valueOptions": { "sourceType": "ModSettingBool" }
+        },
+        {
+          "id": "bMapCameraFollow:Display", "text": "Map Camera Follows Arrow",
+          "type": "toggle", "valueOptions": { "sourceType": "ModSettingBool" }
+        },
+        {
+          "id": "fMapTravelSeconds:Display", "text": "Arrow Slide Duration",
+          "help": "Real seconds the arrow takes to cross the map.",
+          "type": "slider",
+          "valueOptions": { "min": 1, "max": 30, "step": 1, "formatString": "{0} s", "sourceType": "ModSettingFloat" }
+        }
+      ]
+    }
+  ]
+}
